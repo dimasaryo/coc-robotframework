@@ -29,7 +29,7 @@ export async function activateUnsafe(context: ExtensionContext): Promise<void> {
         command: 'robotframework_ls',
     }
     const clientOptions = {
-        documentSelector: ['robot', 'resource'],
+        documentSelector: ['robotframework'],
     }
     const client = new LanguageClient(
         'coc-robotframework',
@@ -37,5 +37,5 @@ export async function activateUnsafe(context: ExtensionContext): Promise<void> {
         serverOptions,
         clientOptions
     )
-    context.subscriptions.push(services.registerLanguageClient(client))
+    context.subscriptions.push(services.registLanguageClient(client))
 }
