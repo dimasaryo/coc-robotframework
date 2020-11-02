@@ -1,4 +1,5 @@
 import {
+    TransportKind,
     ExtensionContext,
     services,
     workspace,
@@ -27,9 +28,19 @@ export async function activateUnsafe(context: ExtensionContext): Promise<void> {
     }
     const serverOptions = {
         command: 'robotframework_ls',
+        transport: TransportKind.stdio
     }
     const clientOptions = {
-        documentSelector: ['robotframework'],
+        documentSelector: [
+            {
+                scheme: 'file',
+                pattern: '**/*.robot'
+            },
+            {
+                scheme: 'file',
+                pattern: '**/*.resource'
+            }
+        ],
     }
     const client = new LanguageClient(
         'coc-robotframework',
