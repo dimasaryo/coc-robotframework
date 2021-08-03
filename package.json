@@ -1,12 +1,15 @@
 {
   "name": "coc-robotframework",
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "description": "coc.nvim extension for Robot Framework",
   "author": "Dimas Aryo <dimasaryoprakoso@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
-    "coc.nvim"
+    "coc.nvim",
+    "languageserver",
+    "robotframework_ls",
+    "robotframework"
   ],
   "engines": {
     "coc": "^0.0.77"
@@ -51,6 +54,16 @@
           "type": "boolean",
           "default": true,
           "description": "Enable coc-robotframework extension"
+        },
+        "coc-robotframework.trace.server": {
+            "type": "string",
+            "default": "verbose",
+            "enum": [
+                "off",
+                "messages",
+                "verbose"
+            ],
+            "description": "Trace level of robotframework_ls"
         }
       }
     },
