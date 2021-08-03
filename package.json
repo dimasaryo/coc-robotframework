@@ -57,7 +57,7 @@
         },
         "coc-robotframework.trace.server": {
             "type": "string",
-            "default": "verbose",
+            "default": "off",
             "enum": [
                 "off",
                 "messages",
